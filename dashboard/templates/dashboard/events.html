@@ -1,0 +1,40 @@
+{% extends 'dashboard/index.html' %}
+{% load static %}
+
+{% block content %}
+
+<p>We also provide services for your special occasion</p>
+<ul>
+    <li>Weddings</li>
+    <li>Engagements</li>
+    <li>Baptism</li>
+    <li>Pilgrim visit</li>
+    <li>Industrial Visit</li>
+</ul>
+<div class="travelcontent" style="margin-top: 20px;"> 
+    <p>Our Garage</p>
+    <div class="grid-container">
+        {% for values in vehicledetails %}   
+           
+            <div class="vehiclethree-d-card">
+                <div class="vehiclecard-wrapper">
+                  <div class="vehiclecard-face front">
+                    <div class="vehiclecard-content">
+                      <div class="vehiclecard-title">Team Penta</div>
+                      <div class="vehiclecard-description">{{values.vehiclename}}</div>
+                    </div>
+                  </div>
+                  <div class="vehiclecard-face back">
+                    <div class="vehiclecard-content">
+                      <div class="vehiclecard-description">
+                        <img src="{{values.vehicleimage.url}}" class="vehiclecard__image" width="100%" alt="{{ values.vehiclename }}">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

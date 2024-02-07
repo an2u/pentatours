@@ -1,0 +1,18 @@
+{% extends 'dashboard/index.html' %}
+{% load static %}
+
+{% block content %}
+<div class="travelcontent" style="margin-top: 20px;"> 
+    <div class="grid-container">
+        {% for values in partnerdetails %}  
+        <div class="partnercard">
+            <img src="{{values.partnerimage.url}}" width="100%" alt="{{ values.logoname }}">
+            <div class="partnercard__content">
+                <p class="partnercard__title">{{ values.name }}</p>
+                <p class="partnercard__description">{{ values.place }} - {{ values.contact }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}

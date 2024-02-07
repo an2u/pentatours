@@ -1,0 +1,26 @@
+{% extends 'dashboard/index.html' %}
+{% load static %}
+
+{% block content %}
+<div class="grid-container">
+    {% for detail in tripsdetails %}  
+    <div class="card-container">
+        <div class="card">
+        <div class="front-content">
+          <p>{% for location in detail.locations.all %}
+            {{ location.location }}<br>
+           {% endfor %}</p>
+        </div>
+        <div class="content">
+          <p class="heading">Success story</p>
+          <p>               
+                This trip was coordinated by {{ detail.Coordinator }}  from {{ detail.start_date }} to {{ detail.end_date }} in 
+                partnership with {{ detail.travel_partner }}, with a budget of {{ detail.budget }} and {{ detail.passengers }} members participating
+          </p>
+        </div>
+      </div>
+      </div>
+    {% endfor %}
+</div>
+{% endblock content %}
+

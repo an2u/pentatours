@@ -1,0 +1,29 @@
+{% extends 'dashboard/index.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="box-content">
+                <img class="thumbnail" src="{%static 'images/IMG-20240117-WA0084.jpg'%}" >
+                <a class="button" href="{% url 'packages' %}">Packages</a>
+            </div>
+        </div>
+        
+        <div class="col-lg-4">
+            <div class="box-content">
+                <img class="thumbnail" src="{%static 'images/IMG-20240117-WA0075.jpg'%}" >
+                <a class="button" href="{% url 'partners' %}">Travel Partners</a>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="box-content">
+                <img class="thumbnail" src="{%static 'images/IMG-20240117-WA0086.jpg'%}" >
+                <a class="button" href="{% url 'events' %}">Event Services</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
